@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Artify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application is a simple interface which uses the public API for the Art Institute of Chicago, to display a paginated catalogue of products from their shop.
 
-## Available Scripts
+The Application is built using mainly
 
-In the project directory, you can run:
+* [ReactJS](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [SCSS](https://github.com/sass/node-sass)
+* [Typescript](https://www.typescriptlang.org/)
 
-### `npm start`
+## Work progress
+* Built a simple one page application which displays a list of products and their prices.
+* Shows a load more button which displays more products when clicked.
+* Responsiveness for tablet and mobile screens.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## App
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+A picture sample of the final app can be seen below:
 
-### `npm test`
+![App Screen](src/assets/final-applicatiion.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In order to run this project on your local machine:
+* Clone the repository with the following command `git clone https://github.com/Cressence/artify.git`
+* Move to the project folder with the following command `cd artify`
+* Install dependencies using YARN `yarn install` or NPM `npm install`
+* Run the project using YARN `yarn run start` or NPM `npm run start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Difficulties
 
-### `npm run eject`
+* Building a pagination component to display the number pages available as well as the pagination steps. So I moved on to using a load more button to handle pagination.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Future Work/Possible Improvements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Add test coverage.
+* Improve on the UI design.
+* Build a pagiantion component where users can click on specific pages and be redirected to the desired page.
+* Smoothly display errors from the API.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Author
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Github: [@Cressence](https://github.com/Cressence)
+* LinkedIn: [@yakam-cressence-685b55134](https://www.linkedin.com/in/yakam-cressence/)
