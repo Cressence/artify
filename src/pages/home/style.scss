@@ -1,0 +1,15 @@
+$small: 300px;
+$medium: 900px;
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	margin-top: 5rem;
+
+	@media screen and (max-width: $small) {
+		rid-template-columns: auto;
+	  }
+	  @media screen and (min-width: $medium) {
+		rid-template-columns: auto auto;
+	  }
+}
