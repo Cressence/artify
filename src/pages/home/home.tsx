@@ -17,7 +17,7 @@ const Home = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [isMounted, setIsMounted] = useState(false);
 
-	const { productsInfo, appError } = useSelector((state: RootState) => ({
+	const { productsInfo } = useSelector((state: RootState) => ({
 		productsInfo: state.ProductInfo,
 		appError: state.ProductInfo.appError
 	}));
@@ -28,7 +28,7 @@ const Home = () => {
 
 			setIsMounted(true);
 		}
-	}, [dispatch, currentPage])
+	}, [dispatch, currentPage, isMounted])
 
 	const loadMoreOnClick = () => {
 		setCurrentPage(currentPage + 1);

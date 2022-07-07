@@ -1,6 +1,19 @@
+$small: 426px;
+$medium: 769px;
+
 .App {
   padding-left: 10rem;
   padding-right: 10rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
+
+  @media screen and (max-width: $small) {
+		padding-left: 1rem;
+    padding-right: 1rem;
+	  }
+
+	  @media screen and (max-width: $medium) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+	  }
 }
