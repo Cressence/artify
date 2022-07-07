@@ -13,3 +13,26 @@ $medium: 900px;
 		rid-template-columns: auto auto;
 	  }
 }
+
+.load-more-btn-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button {
+		margin-left: auto;
+		margin-right: auto;
+		width: 400px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		background-color: #ba7b15;
+		color: #fff;
+		font-size: 16px;
+		border: 1px solid #ba7b15;
+
+		&:hover {
+			background-color: #ffffff;
+			color: #ba7b15;
+		}
+	}
+}

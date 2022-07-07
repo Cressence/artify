@@ -2,7 +2,7 @@ import { PRODUCT_FAILURE, PRODUCT_SUCCESS } from "./constants";
 import Product from "./../models/product";
 
 const initialState: any = {
-	productData: null,
+	productData: [],
 	appError: null
 };
 
@@ -11,10 +11,9 @@ const ProductInfo = (state = initialState, action: any) => {
 		case PRODUCT_SUCCESS: {
 			if (action.data) {
 				const products: Product[] = action.data.data;
-
 				return {
 					...state,
-					productData: products,
+					productData: state.productData.concat(products),
 				};
 			} else {
 				return {

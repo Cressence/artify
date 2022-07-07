@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,14 +14,26 @@ import Product from './../../api/models/product';
 const Home = () => {
 	const dispatch: Dispatch<any> = useDispatch();
 
+	const [currentPage, setCurrentPage] = useState(1);
+	const [isMounted, setIsMounted] = useState(false);
+
 	const { productsInfo, appError } = useSelector((state: RootState) => ({
 		productsInfo: state.ProductInfo,
 		appError: state.ProductInfo.appError
 	}));
 
 	useEffect(() => {
-		dispatch(getProductData(1));
-	}, [dispatch])
+		if (!isMounted) {
+			dispatch(getProductData(currentPage));
+
+			setIsMounted(true);
+		}
+	}, [dispatch, currentPage])
+
+	const loadMoreOnClick = () => {
+		setCurrentPage(currentPage + 1);
+		dispatch(getProductData(currentPage + 1));
+	}
 
 	const products: Product[] = productsInfo.productData;
 
@@ -31,13 +43,19 @@ const Home = () => {
 			<p>Your favorite shop</p>
 			<div className="grid-container">
 				{
-					products &&
+					products.length > 0 &&
 					products.map((prod: Product) => {
 						return <ProductCard key={prod.id} data={prod} />
 					})
 				}
-
 			</div>
+			{
+				products.length > 0 &&
+				<div className="load-more-btn-section">
+					<button onClick={loadMoreOnClick} className="load-more-btn">Load More</button>
+				</div>
+			}
+
 		</div>
 	)
 }
